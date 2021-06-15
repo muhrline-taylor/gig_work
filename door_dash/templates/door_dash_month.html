@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    {% include 'door_dash_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="door_dash_all">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Weekday</th>
+            <th>Milage</th>
+            <th>Gas Cost</th>
+            <th>Other Costs</th>
+            <th>Net Pay</th>
+        </tr>
+        {% for stat in stats %}
+            <tr>
+                <td style="text-align: center; font-size: 2vh;"><a href="{% url 'door_dash' %}/day/{{stat.id}}">{{ stat.date }}</a></td>
+                <td style="text-align: center; font-size: 2vh;"><a href="{% url 'door_dash' %}/weekday/{{ stat.weekday }}">{{ stat.weekday|lower|capfirst }}</a></td>
+                <td style="text-align: center; font-size: 2vh;">
+                    {% if stat.milage == None %}
+                    {% else %}
+                        {{ stat.milage }}miles
+                    {% endif %}
+                </td>
+                <td style="text-align: center; font-size: 2vh;">
+                    {% if stat.gas_cost == None %}
+                    {% else %}
+                        ${{ stat.gas_cost }}
+                    {% endif %}
+                </td>
+                <td style="text-align: center; font-size: 2vh;">
+                    {% if stat.other_costs == None %}
+                    {% else %}
+                        $-{{ stat.other_costs }}
+                    {% endif %}
+                </td>
+                <td style="text-align: center; font-size: 2vh;">
+                    {% if stat.net_pay == None %}
+                    {% else %}
+                        ${{ stat.net_pay }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td style="text-align: center; font-size: 2vh;font-weight: 1000;">TOTAL</td>
+            <td style="text-align: center; font-size: 2vh;"></td>
+            <td style="text-align: center; font-size: 2vh; font-weight: 1000;">{{ total_milage }}miles</td>
+            <td style="text-align: center; font-size: 2vh;font-weight: 1000;">${{ total_gas_cost }}</td>
+            <td style="text-align: center; font-size: 2vh;font-weight: 1000;">${{ total_other_costs }}</td>
+            <td style="text-align: center; font-size: 2vh;font-weight: 1000;">${{ total_net_pay }}</td>
+        </tr>
+    </table>
+    
+</div>
+{% endblock %}

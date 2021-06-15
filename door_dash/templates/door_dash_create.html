@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    {% include 'door_dash_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    
+    <form method='POST' action="{% url 'door_dash_new' %}">
+        {% csrf_token %}
+        <div class="door_dash_create__formField">
+            <div style="margin-left: 9.5%" class="door_dash_create__formField__input">
+                Date: 
+                {{ form.date }}
+            </div>
+            {% if form.errors.date %}
+                {{ form.errors.date }}
+            {% endif %}
+        </div>
+        <div class="door_dash_create__formField">
+            <div style="margin-left: 4%" class="door_dash_create__formField__input">
+                Gas Cost: 
+                {{ form.gas_cost }}
+            </div>
+            {% if form.errors.gas_cost %}
+                <p style="color: red">{{ form.errors.gas_cost.as_text }}</p>
+            {% endif %}
+        </div>
+        <div class="door_dash_create__formField">
+            <div style="margin-left: 5.5%" class="door_dash_create__formField__input">
+                Net Pay: 
+                {{ form.net_pay }}
+            </div>
+            {% if form.errors.net_pay %}
+                {{ form.errors.net_pay }}
+            {% endif %}
+        </div>
+        <div class="door_dash_create__formField">
+            <div style="margin-left: 6.5%" class="door_dash_create__formField__input">
+                Milage: 
+                {{ form.milage }}
+            </div>
+            {% if form.errors.milage %}
+                {{ form.errors.milage }}
+            {% endif %}
+        </div>
+        
+        <div class="door_dash_create__formField">
+            <div class="door_dash_create__formField__input">
+                Other Costs: 
+                {{ form.other_costs }}
+            </div>
+            {% if form.errors.other_costs %}
+                {{ form.errors.other_costs }}
+            {% endif %}
+        </div>
+
+        <div class="door_dash_create__formField">
+            <div class="door_dash_create__formField__input">
+                Weekday: 
+                {{ form.weekday }}
+            </div>
+            {% if form.errors.weekday %}
+                {{ form.errors.weekday }}
+            {% endif %}
+        </div>
+
+        <div class="door_dash_create__formField">
+            <div class="door_dash_create__formField__input">
+                Month
+                {{ month_form.month }}
+            </div>
+            
+        </div>
+        
+        <div class="door_dash_create__formField">
+            <button>Add</button>
+        </div>
+        
+    </form>
+    
+{% endblock %}

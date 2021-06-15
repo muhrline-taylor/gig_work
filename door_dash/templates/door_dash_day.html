@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    {% include 'door_dash_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="door_dash_day">
+        <h1>{{ stat.date }}</h1>
+        <p>Weekday: {{ stat.weekday|lower|capfirst }}</p>
+        <p>Pay: {{ stat.net_pay }}</p>
+        <p>Milage: {{ stat.milage }}</p>
+    </div>
+    
+{% endblock %}

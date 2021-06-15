@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    {% include 'door_dash_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="door_dash_all">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weekday</th>
+                <th>Milage</th>
+                <th>Gas Cost</th>
+                <th>Other Costs</th>
+                <th>Net Pay</th>
+            </tr>
+            {% for stat in weekday_stats %}
+                <tr>
+                    <td class="td_style1"><a href="">{{ stat.date }}</a></td>
+                    <td class="td_style1">{{ stat.weekday|lower|capfirst }}</td>
+                    <td class="td_style1">
+                        {% if stat.milage == None %}
+                        {% else %}
+                            {{ stat.milage }}miles
+                        {% endif %}
+                    </td>
+                    <td class="td_style1">
+                        {% if stat.gas_cost == None %}
+                        {% else %}
+                            ${{ stat.gas_cost }}
+                        {% endif %}
+                    </td>
+                    <td class="td_style1">
+                        {% if stat.other_costs == None %}
+                        {% else %}
+                            $-{{ stat.other_costs }}
+                        {% endif %}
+                    </td>
+                    <td class="td_style1">
+                        {% if stat.net_pay == None %}
+                        {% else %}
+                            ${{ stat.net_pay }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td class="td_style1_bold">TOTAL</td>
+                <td class="td_style1"></td>
+                <td class="td_style1_bold">{{ total_milage }}miles</td>
+                <td class="td_style1_bold">${{ total_gas_cost }}</td>
+                <td class="td_style1_bold">${{ total_other_costs }}</td>
+                <td class="td_style1_bold">${{ total_net_pay }}</td>
+            </tr>
+        </table>
+        
+    </div>
+    
+    
+{% endblock %}

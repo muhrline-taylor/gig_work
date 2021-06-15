@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>You Got Me Fucked Up if You Think I'm Paying for Excel</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script src=
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+        </script>
+        
+        <script src=
+            "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
+        </script>
+    </head>
+    <body>
+        
+        <div class="base__header">
+            {% include 'header.html' %}
+        </div>
+
+        <div class="base__main">
+            <div class="base__mainSidebar">
+                {% block sidebar %}
+                    <h1>sidebar replace_me</h1>
+                {% endblock %}
+            </div>
+            <div class="base__mainBody">
+                {% block content %}
+                    <h1>body replace_me</h1>
+                {% endblock %}
+            </div>
+        </div>
+
+        
+
+    </body>
+</html>

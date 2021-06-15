@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    overflow-y: hidden;
+} 
+
+.base__header {
+    width: 99%;
+    height: 13vh;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.base__main {
+    display: flex;
+    height: 87vh;
+}
+
+.base__mainBody {
+    background-color: rgba(132, 195, 253, 0.425);
+    flex: 0.85;
+    display: flex;
+    justify-content: space-around;
+}
+
+.base__mainBody > form {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.base__mainSidebar {
+    flex: 0.15;
+}
+
+.door_dash_all {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.door_dash_all::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.door_dash_all > table {
+    width: 100%;
+}
+
+.door_dash_all > th, tr, td {
+    border-bottom: 1px solid lightgray;
+}
+
+.door_dash_create__formField {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.door_dash_create__formField > button {
+    height: 60%;
+    width: 10%;
+    font-size: 2vh;
+}
+
+.door_dash_create__formField__input {
+    height: 100%;
+    width: 30%;
+    font-size: 2vh;
+}
+
+.door_dash_create__formField__input > select {
+    font-size: 2vh;
+    margin-left: 15%;
+}
+
+.door_dash_create__formField__input > input {
+    height: 50%;
+    font-size: 2vh;
+}
+
+.door_dash_day {
+    display: flex;
+    flex-direction: column;
+}
+
+.door_dash_landing {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.door_dash_landing__body {
+    height: 50vh;
+    width: 50vw;
+    margin-top: 5%;
+}
+
+.door_dash_landing__body > img {
+    width: 100%;
+    height: auto;
+}
+
+.door_dash_sidebar {
+    border-right: 1px solid lightgray;
+    height: 99%;
+    overflow-y: scroll;
+}
+
+.door_dash_sidebar::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.door_dash_sidebarHeader {
+    height: 6vh;
+    display: flex;
+    background-color: rgba(132, 195, 253, 0.425);
+    border-bottom: 1px solid lightgray;
+    padding-left: 15%;
+}
+
+.door_dash_sidebarHeader > img {
+    flex: 0.235;
+    height: auto;
+}
+
+.door_dash_sidebarHeader > a {
+    flex: 0.765;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 2vh;
+    font-weight: 800;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #FF3008;
+    text-decoration: none;
+}
+
+.header__buttonContainer {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__button {
+    background-color: rgba(211, 211, 211, 0.377);
+    width: 20%;
+    height: 75%;
+    display: flex;
+    margin: 1% 0;
+    border-radius: 20px;
+}
+
+.header__button > a {
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__button:hover, .sidebar__tab:hover {
+    background-color: rgba(211, 211, 211, 0.55);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+}
+
+.td_style1 {
+    text-align: center; 
+    font-size: 2vh;
+}
+
+.td_style1_bold {
+    text-align: center; 
+    font-size: 2vh; 
+    font-weight: 1000;
+}
+
+.sidebar__tab {
+    background-color: rgba(211, 211, 211, 0.377);
+    margin: 5%; 
+    height: 6vh;
+    border-radius: 20px;
+    display: flex;
+}
+
+.sidebar__tab > a {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    color: black;
+}
+
